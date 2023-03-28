@@ -1,20 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/21 17:01:38 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/26 16:29:33 by ramoussa         ###   ########.fr       */
+/*   Created: 2023/03/27 11:46:00 by ramoussa          #+#    #+#             */
+/*   Updated: 2023/03/27 11:54:39 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	if (c >= 'A' && c <= 'Z')
+	int	idx;
+
+	idx = 0;
+	if (!s || !f)
+		return ;
+	while (s[idx])
 	{
-		return (c + 32);
+		f(idx, &s[idx]);
+		idx++;
 	}
-	return (c);
 }

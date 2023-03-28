@@ -1,26 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/22 12:14:30 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/26 13:18:49 by ramoussa         ###   ########.fr       */
+/*   Created: 2023/03/27 12:11:23 by ramoussa          #+#    #+#             */
+/*   Updated: 2023/03/28 11:38:16 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memset(void *b, int c, unsigned int len)
-{
-	unsigned int	i;
-	unsigned char	*str;
+#include "libft.h"
 
-	str = (unsigned char *)b;
-	i = 0;
-	while (i < len)
+void	ft_putnbr_fd(int n, int fd)
+{
+	char	current;
+
+	if (n == -2147483648)
 	{
-		str[i] = (unsigned char)c;
-		i++;
+		ft_putstr_fd("-2147483648", fd);
+		return ;
 	}
-	return (b);
+	else if (n == 0)
+		ft_putchar_fd('0', fd);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putnbr_fd(-n, fd);
+		return ;
+	}
+	current = -1;
+	if (n)
+	{
+		current = n % 10 + '0';
+		n = n / 10;
+		if (n > 0)
+			ft_putnbr_fd(n, fd);
+	}
+	if (current != -1)
+		ft_putchar_fd(current, fd);
 }

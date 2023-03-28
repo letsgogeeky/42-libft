@@ -6,13 +6,13 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/22 15:56:00 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/24 22:25:46 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/03/26 16:26:34 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void	ft_forwardcpy(void *dst, const void *src, unsigned int len)
+static void	ft_forwardcpy(void *dst, const void *src, unsigned int len)
 {
 	unsigned int	i;
 

@@ -6,7 +6,7 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/25 19:18:24 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/26 12:47:58 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/03/26 19:03:36 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char			*trimmed;
 
 	start = 0;
+	if (!s1)
+		return (0);
 	end = ft_strlen(s1);
 	trimmed = 0;
 	if (s1 != 0 && set != 0)

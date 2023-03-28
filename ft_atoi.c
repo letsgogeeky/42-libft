@@ -6,11 +6,11 @@
 /*   By: ramoussa <ramoussa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/24 23:07:23 by ramoussa          #+#    #+#             */
-/*   Updated: 2023/03/25 16:26:24 by ramoussa         ###   ########.fr       */
+/*   Updated: 2023/03/26 16:25:58 by ramoussa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iswhitespace(char c)
+static int	ft_iswhitespace(char c)
 {
 	if (c == ' ' || c == '\t'
 		|| c == '\n' || c == '\v'
